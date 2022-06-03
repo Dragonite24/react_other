@@ -1,28 +1,13 @@
 import { takeEvery } from 'redux-saga/effects'
-
-export type TUsers = {
-  page: number
-  per_page: number
-  total: number
-  total_pages: number
-  data: TUser[]
-}
-
-type TUser = {
-  id: number
-  email: string
-  first_name: string
-  last_name: string
-  avatar: string
-}
+import { UsersState } from '../reducer'
 
 const getUsers = async () => {
   const request = await fetch('https://reqres.in/api/users')
-  const data: TUsers = await request.json()
+  const data: UsersState = await request.json()
   return data
 }
 export function* workerSaga() {
-  const users: TUsers = yield getUsers()
+  const users: UsersState = yield getUsers()
   console.log(users)
 }
 
