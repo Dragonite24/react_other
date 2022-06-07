@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { userReducer, UsersState } from './redux/users/reducer'
+import { userReducer, UsersState } from './users/userReducer'
 import { History } from 'history'
 
 export type RootState = {

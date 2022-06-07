@@ -1,17 +1,25 @@
-import { usersTypes } from '../actionTypes/users'
-import { UsersState } from '../users/reducer'
+import { TUser, usersActionTypes } from 'redux/actionTypes'
 
-export interface FetchUsersFailure {
-  type: typeof usersTypes.FETCH_USERS_FAILURE
+export interface FetchUsersSuccessPayload {
+  users: TUser[]
 }
 
-export interface FetchUsersRequest {
-  type: typeof usersTypes.FETCH_USERS_REQUEST
+export interface FetchUsersFailurePayload {
+  error: string
 }
 
-export interface FetchUsersSuccess {
-  type: typeof usersTypes.FETCH_USERS_SUCCESS
-  data: UsersState
+export type FetchUsersFailure = {
+  type: typeof usersActionTypes.FETCH_USERS_FAILURE
+  payload: FetchUsersFailurePayload
+}
+
+export type FetchUsersRequest = {
+  type: typeof usersActionTypes.FETCH_USERS_REQUEST
+}
+
+export type FetchUsersSuccess = {
+  type: typeof usersActionTypes.FETCH_USERS_SUCCESS
+  payload: FetchUsersSuccessPayload
 }
 
 export type UsersActions = FetchUsersFailure | FetchUsersRequest | FetchUsersSuccess
