@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchUsersRequest } from 'redux/actions'
+import { countCharacters } from 'utils/countData'
 
 import { RootState } from './redux/reducers/rootReducer'
 
@@ -10,7 +11,7 @@ export const App: React.FC = () => {
   return (
     <div>
       <button onClick={() => dispatch(fetchUsersRequest())}>Click</button>
-      <div>Users: {users.map((el) => el.first_name)}</div>
+      <div>Users: {countCharacters(users)}</div>
     </div>
   )
 }
