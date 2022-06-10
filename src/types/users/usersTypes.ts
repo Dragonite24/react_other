@@ -1,4 +1,10 @@
-import { TUser, usersActionTypes } from 'redux/actionTypes'
+import { TUser } from 'redux/users'
+
+export enum UsersActionTypes {
+  FETCH_USERS_REQUEST = 'FETCH_USERS_REQUEST',
+  FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS',
+  FETCH_USERS_FAILURE = 'FETCH_USERS_FAILURE'
+}
 
 export interface FetchUsersSuccessPayload {
   users: TUser[]
@@ -9,16 +15,16 @@ export interface FetchUsersFailurePayload {
 }
 
 export type FetchUsersFailure = {
-  type: typeof usersActionTypes.FETCH_USERS_FAILURE
+  type: typeof UsersActionTypes.FETCH_USERS_FAILURE
   payload: FetchUsersFailurePayload
 }
 
 export type FetchUsersRequest = {
-  type: typeof usersActionTypes.FETCH_USERS_REQUEST
+  type: typeof UsersActionTypes.FETCH_USERS_REQUEST
 }
 
 export type FetchUsersSuccess = {
-  type: typeof usersActionTypes.FETCH_USERS_SUCCESS
+  type: typeof UsersActionTypes.FETCH_USERS_SUCCESS
   payload: FetchUsersSuccessPayload
 }
 

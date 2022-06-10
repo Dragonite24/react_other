@@ -1,6 +1,5 @@
-import { usersActionTypes } from '../../actionTypes/users/usersActionType'
-import { TUser } from '../../actionTypes/users/usersType'
-import { UsersActions } from '../../types/usersTypes'
+import { UsersActions, UsersActionTypes as type } from 'types'
+import { TUser } from './types'
 
 export interface UsersState {
   pending: boolean
@@ -18,19 +17,19 @@ export const userReducer = (state = initialState, action: UsersActions): UsersSt
   console.log(action.type)
 
   switch (action.type) {
-    case usersActionTypes.FETCH_USERS_FAILURE:
+    case type.FETCH_USERS_FAILURE:
       return {
         ...state,
         pending: false,
         users: [],
         error: action.payload.error
       }
-    case usersActionTypes.FETCH_USERS_REQUEST:
+    case type.FETCH_USERS_REQUEST:
       return {
         ...state,
         pending: true
       }
-    case usersActionTypes.FETCH_USERS_SUCCESS:
+    case type.FETCH_USERS_SUCCESS:
       return {
         ...state,
         pending: false,
