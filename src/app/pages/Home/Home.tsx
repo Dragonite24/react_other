@@ -1,10 +1,11 @@
-import { Page } from 'app/templates/Page'
 import { useDispatch } from 'react-redux'
-import { fetchUsersRequest } from 'redux/actions'
+
+import { Page } from 'app/templates/Page'
 import { OutlinedButton } from 'ui/components'
 import { styled } from 'ui/styles'
 
 import { useHome } from './Home.hooks'
+import { fetchUsersRequest } from 'store'
 
 const Wrapper = styled.div`
   display: flex;

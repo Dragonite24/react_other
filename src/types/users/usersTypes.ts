@@ -1,4 +1,4 @@
-import { TUser } from 'redux/users'
+import { TUser } from 'store'
 
 export enum UsersActionTypes {
   FETCH_USERS_REQUEST = 'FETCH_USERS_REQUEST',

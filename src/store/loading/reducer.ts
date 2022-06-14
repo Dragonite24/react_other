@@ -8,7 +8,7 @@ const initialState: LoadingState = {
   loading: false
 }
 
-export const LoadingReducer = (state = initialState, action: LoadingActions): LoadingState => {
+export const loadingReducer = (state = initialState, action: LoadingActions): LoadingState => {
   switch (action.type) {
     case type.LOADING_DISABLED:
       return { loading: false }

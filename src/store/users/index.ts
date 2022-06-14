@@ -1,4 +1,5 @@
-export { fetchUsersSaga, fetchUsers } from './watchers'
+export { usersWatchers } from './watchers'
+
 export { fetchUsersRequest, fetchUsersSuccess, fetchUsersFailure } from './actions'
 export { userReducer } from './reducer'
 

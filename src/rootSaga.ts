@@ -1,5 +1,5 @@
 import { all, fork } from 'redux-saga/effects'
-import { usersWatchers } from 'redux/users/watchers'
+import { usersWatchers } from 'store'
 
 const watchers = [...usersWatchers]
 
