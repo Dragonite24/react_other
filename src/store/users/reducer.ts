@@ -14,8 +14,6 @@ const initialState: UsersState = {
 }
 
 export const userReducer = (state = initialState, action: UsersActions): UsersState => {
-  console.log(action.type)
-
   switch (action.type) {
     case type.FETCH_USERS_FAILURE:
       return {

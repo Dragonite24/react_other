@@ -8,7 +8,7 @@ export type RootState = {
   loading: LoadingState
 }
 
-export const createRootReducer = (history: History) =>
+export const rootReducer = (history: History) =>
   combineReducers<RootState>({
     users: userReducer,
     loading: loadingReducer

@@ -1,1 +1,0 @@
-export { countCharacters } from './countData'

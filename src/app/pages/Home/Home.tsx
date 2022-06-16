@@ -5,12 +5,11 @@ import { OutlinedButton } from 'ui/components'
 import { styled } from 'ui/styles'
 
 import { useHome } from './Home.hooks'
-import { fetchUsersRequest } from 'store'
+import { getUsersThunkCreator } from 'store/users/actions'
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  height: 1000px;
 `
 
 export const Home = () => {
@@ -20,8 +19,8 @@ export const Home = () => {
   return (
     <Page>
       <Wrapper>
-        <OutlinedButton onPress={() => dispatch(fetchUsersRequest())}>Click</OutlinedButton>
-        <div>Users: {users.length}</div>
+        <OutlinedButton onPress={() => dispatch(getUsersThunkCreator())}>Click</OutlinedButton>
+        <span>Users: {users.length}</span>
       </Wrapper>
     </Page>
   )

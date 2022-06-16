@@ -1,3 +1,8 @@
+import { Dispatch } from 'react'
+import { Action } from 'redux'
+
+import { loadingEnabled } from 'store/loading/actions'
+
 import {
   FetchUsersFailure,
   FetchUsersFailurePayload,
@@ -5,7 +10,7 @@ import {
   FetchUsersSuccess,
   FetchUsersSuccessPayload,
   UsersActionTypes
-} from '../../types/users/usersTypes'
+} from 'types'
 
 export const fetchUsersRequest = (): FetchUsersRequest => ({
   type: UsersActionTypes.FETCH_USERS_REQUEST
@@ -20,3 +25,9 @@ export const fetchUsersFailure = (payload: FetchUsersFailurePayload): FetchUsers
   type: UsersActionTypes.FETCH_USERS_FAILURE,
   payload
 })
+
+export const getUsersThunkCreator = () => async (dispatch: Dispatch<Action>) => {
+  dispatch(fetchUsersRequest())
+  dispatch(loadingEnabled())
+  console.log(1)
+}

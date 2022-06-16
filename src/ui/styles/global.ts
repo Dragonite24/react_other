@@ -17,6 +17,8 @@ export const GlobalStyles = createGlobalStyle`
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    align-items: center;
+    position: relative;
   }
 
   b,

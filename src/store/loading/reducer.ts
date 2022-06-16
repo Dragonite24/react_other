@@ -13,10 +13,7 @@ export const loadingReducer = (state = initialState, action: LoadingActions): Lo
     case type.LOADING_DISABLED:
       return { loading: false }
     case type.LOADING_ENABLED:
-      return {
-        loading: true
-      }
-
+      return { loading: true }
     default:
       return state
   }
